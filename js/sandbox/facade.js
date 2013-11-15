@@ -5,9 +5,8 @@
 
 			var core = app.core,
 			dom = core.dom,
-			mediator = core.mediator,
-			moduleElement = dom.query(moduleId);
-
+			mediator = core.mediator;
+			
 			return {
 				publish : function(e){
 					mediator.trigger(e);
