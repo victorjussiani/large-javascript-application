@@ -17,7 +17,6 @@
 			},
 
 			updateCounter : function(){
-				console.log(counterElement);
 				counter++;
 				f.setHTML(counterElement, counter);
 			}

@@ -4,9 +4,9 @@
 		define : function(core, moduleId){
 
 			var core = app.core,
-				dom = core.dom,
-				events = core.events,
-				moduleElement = dom.query(moduleId);
+			dom = core.dom,
+			events = core.events,
+			moduleElement = dom.query(moduleId);
 
 			return {
 				publish : function(e){
@@ -54,12 +54,12 @@
 				},
 
 				addClass : function(element, clazz){
-	        		return dom.addClass(element, clazz);
-	        	},
+					return dom.addClass(element, clazz);
+				},
 
-	        	removeClass : function(element, clazz){
-	        		return dom.removeClass(element, clazz);
-	        	},
+				removeClass : function(element, clazz){
+					return dom.removeClass(element, clazz);
+				},
 
 				append : function(reference, element){
 					dom.append(reference, element);
