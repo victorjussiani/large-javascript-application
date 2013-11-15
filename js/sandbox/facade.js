@@ -5,20 +5,20 @@
 
 			var core = app.core,
 			dom = core.dom,
-			events = core.events,
+			mediator = core.mediator,
 			moduleElement = dom.query(moduleId);
 
 			return {
 				publish : function(e){
-					events.trigger(e);
+					mediator.trigger(e);
 				},
 
 				subscribe : function(e){
-					events.register(e, moduleId);
+					mediator.register(e, moduleId);
 				},
 
 				unsubscribe : function(e){
-					events.remove(e, moduleId);
+					mediator.remove(e, moduleId);
 				},
 
 				find : function(selector){

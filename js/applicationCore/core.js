@@ -17,7 +17,7 @@
 						app.core.throwError(1, 	"Module " + id + "registration failed. Instance cannot be initialized");
 					}
 				} else {
-					app.core.throwError(1, 	"Module " + id + "registration failed. Instance cannot be initialized");
+					app.core.throwError(1, 	"Module " + id + "registration failed. Invalid arguments");
 				}
 			},
 
@@ -52,11 +52,10 @@
 			},
 
 			throwError : function(type, message){
-				throw message;
+				throw type + " : " + message;
 			},
 
-			events : {
-
+			mediator : {
 				register : function(events, moduleId){
 					if(!app.core.dom.isObject(events) || !moduleId || typeof moduleId != "string"){
 						app.core.throwError(1, "Events registration failed. Invalid arguments");
@@ -70,8 +69,9 @@
 				}, 
 
 				trigger : function(events){
-					if(!app.core.dom.isObject(events)) app.core.throwError(1, "Events trigger failed. Invalid arguments");
-					else {
+					if(!app.core.dom.isObject(events)){
+						app.core.throwError(1, "Events trigger failed. Invalid arguments");	
+					} else {
 						for(var module in modules){
 							if(modules.hasOwnProperty(module)){
 								module = modules[module];
@@ -85,7 +85,7 @@
 
 				remove : function(ev, moduleId){
 					if(app.core.dom.isObject(ev) && module && (module = data[module]) && module.events){
-						delete module.events;
+						module.events = null;
 					}
 				}
 			},
@@ -193,10 +193,6 @@
 				isObject:function(obj){
 					return jQuery.isPlainObject(obj);
 				}
-			},
-
-			getModules : function(){
-				return modules;
 			}
 		};
 
