@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Todo example</title>
+   <link rel="stylesheet" href="css/todo.css" />
+</head>
+<body>
+
+    <div id="main">
+        <div class="todoHeadline">
+            <div id="todoCaption">Todos List</div>
+            <div id="todoCounter">
+                <div id="count">0</div>
+            </div>
+        </div>
+
+        <div id="todoEntry">
+            <input id="todoField" type="text" placeholder="Insira sua task"/>
+            <button class="btn">Add</button>
+        </div>
+
+        <div id="validate">
+            <div id="errorMessage">
+                <div id="alert"></div>            
+            </div>
+        </div>
+
+        <div id="todoList">
+            <ul></ul> 
+        </div> 
+    </div>
+
+    <div id="credits">
+      By Víctor Borges
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/applicationCore/core.js"></script>
+    <script src="js/sandbox/facade.js"></script>
+    <script src="js/modules/todoListModules.js"></script>
+</body>
+</html>
